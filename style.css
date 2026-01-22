@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f2f2f2;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+.form-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+.guideline-content {
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.college-header {
+  width: 100%;
+  max-width: none;   /* THIS is the key line */
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+
+
+img {
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+
+@media print {
+
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  button,
+  #search-section {
+    display: none;
+  }
+
+  input,
+  textarea {
+    border: none;
+    padding: 0;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .form-section {
+    page-break-inside: avoid;
+  }
+
+}

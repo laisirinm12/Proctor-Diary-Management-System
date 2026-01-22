@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proctor Diary Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="logo.png" alt="College Logo" class="college-header">
+<div class="container">
+
+  <h1>Department of Information Science & Engineering</h1>
+  <h2>Proctor Diary</h2>
+  <div style="text-align:right; margin-bottom:10px;">
+    <button onclick="logout()" style="background:#d32f2f;">
+      Logout
+    </button>
+  </div>
+
+  <div id="search-section">
+    <input type="text" id="usnInput" placeholder="Enter USN">
+    <button onclick="searchUSN()">Search</button>
+    <button onclick="newStudent()">New Student</button>
+  </div>
+
+  <form id="proctorForm" style="display:none;">
+
+    <!-- PERSONAL INFO -->
+    <div class="form-section" id="personalSection">
+      <h3>Personal Information</h3>
+      <label>Student Name <input type="text" id="studentName"></label>
+      <label>DOB <input type="date" id="dob"></label>
+      <label>Father Name <input type="text" id="fatherName"></label>
+      <label>Mother Name <input type="text" id="motherName"></label>
+
+      <label>Upload Photo <input type="file" id="photoUpload" onchange="previewPhoto()"></label>
+      <img id="photoPreview">
+
+      <button type="button" onclick="nextToGuidelines()">Next</button>
+    </div>
+
+    <!-- GUIDELINES -->
+    <div class="form-section" id="guidelinesPage" style="display:none;">
+      <h3>Guidelines</h3>
+
+      <div class="guideline-content">
+        <!-- YOUR LONG GUIDELINES CAN STAY HERE -->
+        <p>Department proctorial guidelines</p>
+      </div>
+
+      <label>Upload e-Signature
+        <input type="file" id="esignUpload" onchange="previewESign()">
+      </label>
+      <img id="esignPreview">
+
+      <button type="button" onclick="nextToProctorNames()">Next</button>
+    </div>
+
+    <!-- PROCTOR NAMES -->
+    <div class="form-section" id="proctorNamesSection" style="display:none;">
+      <h3>Proctor Names (Sem 1-8)</h3>
+      <div id="proctorNamesInputs"></div>
+      <button type="button" onclick="nextToSemester()">Next</button>
+    </div>
+
+    <!-- SEMESTERS -->
+    <div id="semesterForms"></div>
+
+    <!-- FINAL ACTIONS -->
+    <div id="finalActions" style="display:none;">
+      <button type="button" onclick="saveData(this)">Save</button>
+      <button type="button" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
